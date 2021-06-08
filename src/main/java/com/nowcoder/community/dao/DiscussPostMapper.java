@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface DiscussPostMapper {
+public interface  DiscussPostMapper {
 
     List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
 
@@ -16,5 +16,7 @@ public interface DiscussPostMapper {
     int selectDiscussPostRows(@Param("userId") int userId);
 
     int insertDiscussPost(DiscussPost discussPost);
+
+    DiscussPost selectDiscussPostById(int id);
 
 }

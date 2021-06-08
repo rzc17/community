@@ -10,7 +10,7 @@ import org.springframework.web.util.HtmlUtils;
 import java.util.List;
 
 @Service
-public class DiscussPostService {
+public class   DiscussPostService {
 
     @Autowired
     private DiscussPostMapper discussPostMapper;
@@ -39,6 +39,10 @@ public class DiscussPostService {
         post.setContent(sensitiveFilter.filter(post.getContent()));
 
         return discussPostMapper.insertDiscussPost(post);
+    }
+
+    public DiscussPost findDiscussPostById(int id) {
+        return discussPostMapper.selectDiscussPostById(id);
     }
 
 }
